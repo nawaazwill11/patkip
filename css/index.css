@@ -1,0 +1,100 @@
+body {
+    margin: 0px;
+    padding: 2px;
+    padding-bottom: 0px;
+    font-family: 'Titillium Web', sans-serif;
+}
+.container {
+    width: 100%;
+    padding: 0px !important;
+    margin: 0px !important;
+}
+.root {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 100vh) ;
+}
+section {
+    width: 100%;
+    padding: 0px !important;
+    margin: 0px !important;
+}
+#logo {
+    width: 100%;
+    height: 100%;
+    /* background-image: url(../img/k-logo.png);  */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.matter {
+    display: grid;
+    vertical-align: middle;
+    position: absolute;
+    min-width: 100%;
+    min-height: 100vh;
+    background-color: #56565661;
+}
+.highlight {
+    color: white;
+    text-align: center;
+}
+.highlight h1 {
+    font-size: 1.6em;
+}
+.highlight h2 {
+    font-weight: 100;
+}
+.logo-wrapper img {
+    z-index: 1;
+}
+.fs {
+    border: 1px solid;
+    box-sizing: border-box;
+}
+.p {
+    text-align: center;
+}
+.hs {
+    border: 1px solid;
+    border-collapse: collapse;
+}
+.action {
+    display: flex;
+    position: relative;
+    width: 100%;
+    top: 80vh;
+    justify-content: center;
+    z-index: 2;
+    transition: 1s;
+}
+.navigate {
+    position: absolute;
+    width: 40vw;
+    height: 10vh;
+    border-radius: 40px;
+    border: 3px solid white;
+    background-color: #e8e8e8;
+    transition: 0.3s;
+}
+.navigate a {
+    text-decoration: none;
+    color: dimgray;
+    font-size: 2em;
+}
+
+.navigate:hover {
+    background-color: #e8e8e880;
+    transition: 0.3s;
+}
+
+.hs .action {
+    top: 33vh;
+}
+.s-1 {
+    background-color: black;
+}
+.s-5 {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+}

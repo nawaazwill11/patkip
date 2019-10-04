@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>KIP</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <!-- <link href="https://fonts.googleapis.com/css?family=El+Messiri|Merienda&display=swap" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="root">
+            <section id="logo" class="fs s-1">
+                <div class="matter">
+                    <div></div>
+                    <div class="highlight">
+                        <h1>Kickstart <br> Your <br> Programming <br> Career</h1>
+                        <h2>Learn programming the way it's meant to be learned.</h2>
+                    </div>
+                    <div></div>
+                </div>
+               <div class="action">
+                    <button class="navigate"><a href="#learn">Explore</a></button>
+                </div>
+            </section>
+            <section id="learn" class="fs s-2">
+                <p class="p">What to learn</p>
+                <div class="action">
+                    <button class="navigate"><a href="#benefits">Explore</a></button>
+                </div>
+            </section>
+            <section id="benefits" class="fs s-3">
+                <p class="p">Benefits</p>
+                <div class="action">
+                    <button class="navigate"><a href="#register">Explore</a></button>
+                </div>
+            </section>
+            <section id="register" class="fs s-4">
+                <p class="p">Registration</p>
+                <div class="action">
+                    <button class="navigate"><a href="#contact">Explore</a></button>
+                </div>
+            </section>
+            <section id="contact" class="fs s-5">
+                <div class="hs">
+                    <p>More Information</p>
+                </div>
+                <div class="hs">
+                    <p>Footer</p>
+                    <div class="action">
+                        <button class="navigate"><a href="#logo">Back to top</a></button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <script>
+        // Adds hover effect to buttons. 
+        let navigate = document.getElementsByClassName('navigate');
+        for (let i = 0; i < navigate.length; i ++) {
+            navigate = navigate[i];
+            navigate.addEventListener('mouseover', function () {
+                navigate.children[0].style.color = 'white';
+            });
+            navigate.addEventListener('mouseleave', function () {
+                navigate.children[0].style.color = "dimgray";
+            });
+            navigate.addEventListener('click', function () {
+                navigate.children[0].click();
+            });
+        }
+
+
+    </script>
+</body>
+</html>

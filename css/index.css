@@ -10,7 +10,7 @@ body {
 }
 nav {
     display: grid;
-    position: absolute;
+    position: fixed;
     width:100vw;
     min-height: 10vh;
     background-color: white;
@@ -223,4 +223,19 @@ button:focus {
 }
 .close {
 	transform: translate(-1000px, 20px) !important;
+}
+#top {
+    position: fixed;
+    bottom: 35px;
+    right: 20px;
+    height: 5em;
+    width: 5em;
+    border-radius: 100%;
+    border: 3px solid dimgray;
+    z-index: 1200;
+    background-color: white;
+    background-image: url('../img/scroll-up.png');
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
 }

@@ -17,17 +17,18 @@
             </div>
             <div class="nav-controls">
                 <ul id="nav-control-list">
-                    <li data-scroll="kip">About Us</li>
-                    <li data-scroll="learn">Learn</li>
-                    <li data-scroll="benefits">Benefits</li>
-                    <li data-scroll="register">Register</li>
-                    <li data-scroll="contact">Contact</li>
+                    <li class="nav-item" data-scroll="kip">About Us</li>
+                    <li class="nav-item" data-scroll="learn">Learn</li>
+                    <li class="nav-item" data-scroll="benefits">Benefits</li>
+                    <li class="nav-item" data-scroll="register">Register</li>
+                    <li class="nav-item" data-scroll="contact">Contact</li>
                 </ul>
             </div>
             <div class="ham">
                 <img src="./img/ham.png" alt="hamburger">
             </div>
         </nav>
+        <button id="top"></button>
         <div class="root">
             <section id="logo" class="fs s-1">
                 <div class="matter section-common">
@@ -118,6 +119,7 @@
             </section>
         </div>
     </div>
+    <!-- <script src="./js/jquery-3.4.1.min.js"></script> -->
     <script>
         // Adds hover effect to buttons. 
         let navigate = document.getElementsByClassName('navigate');
@@ -137,7 +139,7 @@
             // scroll effects
             nav.addEventListener('click', function () {
                 let tag = nav.getAttribute('data-scroll');
-                scrollToView(tag)
+                scrollToElement(tag)
             });
 
         }
@@ -165,7 +167,7 @@
             child.addEventListener('click', function () {
                 slideNavList();
                 let tag = child.getAttribute('data-scroll');
-                scrollToView(tag);
+                scrollToElement(tag);
             });
         }
 
@@ -201,6 +203,48 @@
                 ham.children[0].setAttribute('src', './img/ham.png')
             }
         }
+
+        let root = document.getElementsByClassName('root')[0];
+        root.addEventListener('click', function (){
+            if (nav_list.classList.contains('open')) {
+                nav_list.classList.remove('open');
+                nav_list.classList.add('close');
+            }
+        });
+
+
+        // A beautiful function for smooth scrolling.
+        // with adjustable x and y positions.
+        function scrollToElement(tag) {
+            var positionX = 0,         
+                positionY = 0;    
+            if (tag != 'logo') {
+                positionY -= 80;
+            }
+            let pageElement = document.getElementById(tag);
+
+            while(pageElement != null){       
+                positionX += pageElement.offsetLeft;        
+                positionY += pageElement.offsetTop;        
+                pageElement = pageElement.offsetParent;        
+            }
+
+            window.scroll({
+                top: positionY,
+                left: positionX,
+                behavior: 'smooth'
+            });
+        }
+
+        let uptop = document.getElementById('top');
+        uptop.addEventListener('click', function () {
+            window.scroll({
+                top: 0,
+                left: 0,
+                behavior: 'smooth'
+            });
+        });
+        
 
         
     </script>

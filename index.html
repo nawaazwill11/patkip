@@ -13,7 +13,7 @@
     <div class="container">
         <div class="root">
             <section id="logo" class="fs s-1">
-                <div class="matter">
+                <div class="matter section-common">
                     <div></div>
                     <div class="highlight">
                         <h1>Kickstart <br> Your <br> Programming <br> Career</h1>
@@ -22,25 +22,34 @@
                     <div></div>
                 </div>
                <div class="action">
-                    <button class="navigate"><a href="#learn">Explore</a></button>
+                    <button class="navigate yang" data-scroll="learn">Explore</button>
                 </div>
             </section>
             <section id="learn" class="fs s-2">
-                <p class="p">What to learn</p>
+                <div class="section-content section-common">
+                    <div class="section-heading highlight-dark">
+                        <h1>Who are we?</h1>
+                    </div>
+                    <div class="section-body">
+                        <article>
+                                We are not a formal institute where student will learn a specific skill set, rather, we are a playground where they learn by exploring, creating, and most importantly enjoying their expedition of knowledge.
+                        </article>
+                    </div>
+                </div>
                 <div class="action">
-                    <button class="navigate"><a href="#benefits">Explore</a></button>
+                    <button class="navigate yin" data-scroll="benefits">Benefits</button>
                 </div>
             </section>
             <section id="benefits" class="fs s-3">
-                <p class="p">Benefits</p>
+                <!-- <p class="p">Benefits</p> -->
                 <div class="action">
-                    <button class="navigate"><a href="#register">Explore</a></button>
+                    <button class="navigate yang" data-scroll="register">Register</button>
                 </div>
             </section>
             <section id="register" class="fs s-4">
-                <p class="p">Registration</p>
+                <!-- <p class="p">Registration</p> -->
                 <div class="action">
-                    <button class="navigate"><a href="#contact">Explore</a></button>
+                    <button class="navigate yin" data-scroll="contact">Contact</button>
                 </div>
             </section>
             <section id="contact" class="fs s-5">
@@ -50,7 +59,7 @@
                 <div class="hs">
                     <p>Footer</p>
                     <div class="action">
-                        <button class="navigate"><a href="#logo">Back to top</a></button>
+                        <button class="navigate yin" data-scroll="logo">Back to top</button>
                     </div>
                 </div>
             </section>
@@ -60,16 +69,21 @@
         // Adds hover effect to buttons. 
         let navigate = document.getElementsByClassName('navigate');
         for (let i = 0; i < navigate.length; i ++) {
-            navigate = navigate[i];
-            navigate.addEventListener('mouseover', function () {
-                navigate.children[0].style.color = 'white';
+            let nav = navigate[i];
+            // hover effects
+            // nav.addEventListener('mouseover', function () {
+            //     nav.style.color = 'white';
+            // });
+            // nav.addEventListener('mouseleave', function () {
+            //     nav.style.color = "dimgray";
+            // });
+
+            nav.addEventListener('click', function () {
+                let tag = nav.getAttribute('data-scroll');
+                let scrollTo = document.getElementById(tag);
+                scrollTo.scrollIntoView({behavior: "smooth"});
             });
-            navigate.addEventListener('mouseleave', function () {
-                navigate.children[0].style.color = "dimgray";
-            });
-            navigate.addEventListener('click', function () {
-                navigate.children[0].click();
-            });
+
         }
 
 

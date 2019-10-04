@@ -11,6 +11,23 @@
 </head>
 <body>
     <div class="container">
+        <nav id="navbar" class="navbar">
+            <div class="site-name">
+                <h2>KIP</h2>
+            </div>
+            <div class="nav-controls">
+                <ul id="nav-control-list">
+                    <li data-scroll="kip">About Us</li>
+                    <li data-scroll="learn">Learn</li>
+                    <li data-scroll="benefits">Benefits</li>
+                    <li data-scroll="register">Register</li>
+                    <li data-scroll="contact">Contact</li>
+                </ul>
+            </div>
+            <div class="ham">
+                <img src="./img/ham.png" alt="hamburger">
+            </div>
+        </nav>
         <div class="root">
             <section id="logo" class="fs s-1">
                 <div class="matter section-common">
@@ -22,10 +39,10 @@
                     <div></div>
                 </div>
                <div class="action">
-                    <button class="navigate yang" data-scroll="learn">Explore</button>
+                    <button class="navigate yang" data-scroll="kip">Explore</button>
                 </div>
             </section>
-            <section id="learn" class="fs s-2">
+            <section id="kip" class="fs s-2">
                 <div class="section-content section-common">
                     <div class="section-heading highlight-dark">
                         <h1>Who are we?</h1>
@@ -37,22 +54,58 @@
                     </div>
                 </div>
                 <div class="action">
-                    <button class="navigate yin" data-scroll="benefits">Benefits</button>
+                    <!-- <button class="navigate nav-up yin" data-scroll="logo">Learn</button>  -->
+                    <button class="navigate nav-down yin" data-scroll="learn">Learn</button>
                 </div>
             </section>
-            <section id="benefits" class="fs s-3">
+            <section id="learn" class="fs s-3">
                 <!-- <p class="p">Benefits</p> -->
+                <div class="section-content section-common">
+                    <div class="section-heading highlight-dark">
+                        <h1>What are we offering?</h1>
+                    </div>
+                    <div class="section-body">
+                        <article>
+                                We are not a formal institute where student will learn a specific skill set, rather, we are a playground where they learn by exploring, creating, and most importantly enjoying their expedition of knowledge.
+                        </article>
+                    </div>
+                </div>
                 <div class="action">
-                    <button class="navigate yang" data-scroll="register">Register</button>
+                    <button class="navigate yang" data-scroll="benefits">Benefits</button>
                 </div>
             </section>
-            <section id="register" class="fs s-4">
+            <section id="benefits" class="fs s-4">
                 <!-- <p class="p">Registration</p> -->
+                <div class="section-content section-common">
+                    <div class="section-heading highlight-dark">
+                        <h1>How does it benefit you?</h1>
+                    </div>
+                    <div class="section-body">
+                        <article>
+                                We are not a formal institute where student will learn a specific skill set, rather, we are a playground where they learn by exploring, creating, and most importantly enjoying their expedition of knowledge.
+                        </article>
+                    </div>
+                </div>
                 <div class="action">
-                    <button class="navigate yin" data-scroll="contact">Contact</button>
+                    <button class="navigate yin" data-scroll="register">Register</button>
                 </div>
             </section>
-            <section id="contact" class="fs s-5">
+            <section id="register" class="fs s-5">
+                <div class="section-content section-common">
+                    <div class="section-heading highlight-dark">
+                        <h1>How to register?</h1>
+                    </div>
+                    <div class="section-body">
+                        <article>
+                                We are not a formal institute where student will learn a specific skill set, rather, we are a playground where they learn by exploring, creating, and most importantly enjoying their expedition of knowledge.
+                        </article>
+                    </div>
+                </div>
+                <div class="action">
+                    <button class="navigate yang" data-scroll="contact">Contact</button>
+                </div>
+            </section>
+            <section id="contact" class="fs s-6">
                 <div class="hs">
                     <p>More Information</p>
                 </div>
@@ -70,23 +123,86 @@
         let navigate = document.getElementsByClassName('navigate');
         for (let i = 0; i < navigate.length; i ++) {
             let nav = navigate[i];
+            let param = ['yin', 'yang'];
             // hover effects
-            // nav.addEventListener('mouseover', function () {
-            //     nav.style.color = 'white';
-            // });
-            // nav.addEventListener('mouseleave', function () {
-            //     nav.style.color = "dimgray";
-            // });
-
+            nav.addEventListener('mouseover', function () {
+                buttonEffects(nav, param);
+            });
+            nav.addEventListener('mouseleave', function () {
+                buttonEffects(nav, param)
+            });
+            nav.addEventListener('touchend', function () {
+                buttonEffects(nav, param)
+            });
+            // scroll effects
             nav.addEventListener('click', function () {
                 let tag = nav.getAttribute('data-scroll');
-                let scrollTo = document.getElementById(tag);
-                scrollTo.scrollIntoView({behavior: "smooth"});
+                scrollToView(tag)
             });
 
         }
 
+        function scrollToView (tag) {
+            let scrollTo = document.getElementById(tag);
+            scrollTo.scrollIntoView({behavior: "smooth"});
+        }
 
+        function buttonEffects(nav, param) {
+            if (nav.classList.contains(param[0])){
+                    nav.classList.remove(param[0]);
+                    nav.classList.add(param[1])
+                }
+            else {
+                nav.classList.remove(param[1]);
+                nav.classList.add(param[0]);
+            }
+        }
+
+        let nav_list = document.getElementById('nav-control-list');
+        let nav_children = nav_list.children;
+        for (let i = 0; i < nav_children.length; i++) {
+            let child = nav_children[i];
+            child.addEventListener('click', function () {
+                slideNavList();
+                let tag = child.getAttribute('data-scroll');
+                scrollToView(tag);
+            });
+        }
+
+        let ham = document.getElementsByClassName('ham')[0];
+        console.log(ham);
+        ham.addEventListener('click', function () {
+            slideNavList();
+        });
+
+        function slideNavList() {
+            toggleHam();
+            if (nav_list.classList.contains('close') || nav_list.classList.length == 0) {
+                nav_list.classList.remove('close');
+                nav_list.classList.add('open');
+            }
+            else {
+                nav_list.classList.remove('open');
+                nav_list.classList.add('close');
+            }
+        }
+
+        function toggleHam () {
+            ham.style.backgroundColor = 'ghostwhite';
+            setTimeout(function () {
+                ham.style.transition = '0.3s';
+                ham.style.backgroundColor = 'unset';
+            }, 300);
+            let img = ham.children[0];
+            if (img.getAttribute('src') == './img/ham.png') {
+                ham.children[0].setAttribute('src', './img/cross.png')
+            }
+            else {
+                ham.children[0].setAttribute('src', './img/ham.png')
+            }
+        }
+
+        
     </script>
 </body>
 </html>

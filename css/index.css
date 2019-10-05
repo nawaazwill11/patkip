@@ -11,11 +11,13 @@ body {
 nav {
     display: grid;
     position: fixed;
+    top: 0;
+    left: 0;
     width:100vw;
     min-height: 10vh;
     background-color: white;
     grid-template-columns: 0.7fr 1fr;
-    z-index: 100;
+    z-index: 101;
 }
 section {
     width: 100%;
@@ -90,7 +92,7 @@ button:focus {
     
 }
 .section-common {
-    position: absolute;
+    position: relative;
     min-width: 100%;
     min-height: 100vh;
 }
@@ -105,7 +107,7 @@ button:focus {
 }
 .section-body article {
     padding: 50px;
-    line-height: 2.3em;
+    line-height: 1.6em;
     word-spacing: 1px;
     justify-content: space-evenly;
     overflow-wrap: break-word;
@@ -147,9 +149,9 @@ button:focus {
     display: flex;
     position: relative;
     width: 100%;
-    top: 80vh;
     justify-content: center;
     transition: 1s;
+    top: -25vh;
 }
 .navigate {
     position: absolute;
@@ -159,6 +161,7 @@ button:focus {
     transition: 0.3s;
     font-size: 1.2em;
     border: none;
+    z-index: 100;
 }
 .yin {
     color: #e8e8e8;

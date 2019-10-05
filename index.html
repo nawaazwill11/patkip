@@ -50,7 +50,12 @@
                     </div>
                     <div class="section-body">
                         <article>
-                                We are not a formal institute where student will learn a specific skill set, rather, we are a playground where they learn by exploring, creating, and most importantly enjoying their expedition of knowledge.
+                            <p>
+                                Kortiwala Institute of Programming is a hub for learning programming skills that'll help you build modern world softwares.
+                            </p>
+                            <p>
+                                We offer project-based teaching where you learn computer programming by building software projects from beginning to end.
+                            </p>
                         </article>
                     </div>
                 </div>
@@ -120,133 +125,6 @@
         </div>
     </div>
     <!-- <script src="./js/jquery-3.4.1.min.js"></script> -->
-    <script>
-        // Adds hover effect to buttons. 
-        let navigate = document.getElementsByClassName('navigate');
-        for (let i = 0; i < navigate.length; i ++) {
-            let nav = navigate[i];
-            let param = ['yin', 'yang'];
-            // hover effects
-            nav.addEventListener('mouseover', function () {
-                buttonEffects(nav, param);
-            });
-            nav.addEventListener('mouseleave', function () {
-                buttonEffects(nav, param)
-            });
-            nav.addEventListener('touchend', function () {
-                buttonEffects(nav, param)
-            });
-            // scroll effects
-            nav.addEventListener('click', function () {
-                let tag = nav.getAttribute('data-scroll');
-                scrollToElement(tag)
-            });
-
-        }
-
-        function scrollToView (tag) {
-            let scrollTo = document.getElementById(tag);
-            scrollTo.scrollIntoView({behavior: "smooth"});
-        }
-
-        function buttonEffects(nav, param) {
-            if (nav.classList.contains(param[0])){
-                    nav.classList.remove(param[0]);
-                    nav.classList.add(param[1])
-                }
-            else {
-                nav.classList.remove(param[1]);
-                nav.classList.add(param[0]);
-            }
-        }
-
-        let nav_list = document.getElementById('nav-control-list');
-        let nav_children = nav_list.children;
-        for (let i = 0; i < nav_children.length; i++) {
-            let child = nav_children[i];
-            child.addEventListener('click', function () {
-                slideNavList();
-                let tag = child.getAttribute('data-scroll');
-                scrollToElement(tag);
-            });
-        }
-
-        let ham = document.getElementsByClassName('ham')[0];
-        console.log(ham);
-        ham.addEventListener('click', function () {
-            slideNavList();
-        });
-
-        function slideNavList() {
-            toggleHam();
-            if (nav_list.classList.contains('close') || nav_list.classList.length == 0) {
-                nav_list.classList.remove('close');
-                nav_list.classList.add('open');
-            }
-            else {
-                nav_list.classList.remove('open');
-                nav_list.classList.add('close');
-            }
-        }
-
-        function toggleHam () {
-            ham.style.backgroundColor = 'ghostwhite';
-            setTimeout(function () {
-                ham.style.transition = '0.3s';
-                ham.style.backgroundColor = 'unset';
-            }, 300);
-            let img = ham.children[0];
-            if (img.getAttribute('src') == './img/ham.png') {
-                ham.children[0].setAttribute('src', './img/cross.png')
-            }
-            else {
-                ham.children[0].setAttribute('src', './img/ham.png')
-            }
-        }
-
-        let root = document.getElementsByClassName('root')[0];
-        root.addEventListener('click', function (){
-            if (nav_list.classList.contains('open')) {
-                nav_list.classList.remove('open');
-                nav_list.classList.add('close');
-            }
-        });
-
-
-        // A beautiful function for smooth scrolling.
-        // with adjustable x and y positions.
-        function scrollToElement(tag) {
-            var positionX = 0,         
-                positionY = 0;    
-            if (tag != 'logo') {
-                positionY -= 80;
-            }
-            let pageElement = document.getElementById(tag);
-
-            while(pageElement != null){       
-                positionX += pageElement.offsetLeft;        
-                positionY += pageElement.offsetTop;        
-                pageElement = pageElement.offsetParent;        
-            }
-
-            window.scroll({
-                top: positionY,
-                left: positionX,
-                behavior: 'smooth'
-            });
-        }
-
-        let uptop = document.getElementById('top');
-        uptop.addEventListener('click', function () {
-            window.scroll({
-                top: 0,
-                left: 0,
-                behavior: 'smooth'
-            });
-        });
-        
-
-        
-    </script>
+    <script src="./js/index.js"></script>
 </body>
 </html>

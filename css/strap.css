@@ -1,0 +1,20 @@
+.btn {
+    padding: 15px;
+    border-radius: 25px;
+    border: none;
+    box-shadow: 0px 0px 5px 2px lightgray;
+    font-size: small;
+}
+.btn:hover {
+    cursor: pointer;
+}
+.btn:active {
+    border-style: solid;
+}
+.btn-inline {
+    display: inline-block;
+}
+.btn-purpleblue {
+    background-color: #746bf0cc;
+    color: ghostwhite;
+}

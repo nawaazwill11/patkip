@@ -6,79 +6,138 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>KIP</title>
     <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/strap.css"> 
+    <link rel="stylesheet" href="./css/index_media_query.css">
     <!-- <link href="https://fonts.googleapis.com/css?family=El+Messiri|Merienda&display=swap" rel="stylesheet"> -->
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
+    <main class="container">
         <nav id="navbar" class="navbar">
             <div class="site-name">
+                <div class="mark-logo mln">
+                    <img src="./img/kip-logo-min.png" alt="kip-logo">
+                </div>
                 <h2>KIP</h2>
             </div>
             <div class="nav-controls">
                 <ul id="nav-control-list">
-                    <li class="nav-item" data-scroll="kip">About Us</li>
+                    <li class="nav-item" data-scroll="about-us">About Us</li>
                     <li class="nav-item" data-scroll="learn">Learn</li>
                     <li class="nav-item" data-scroll="benefits">Benefits</li>
-                    <li class="nav-item" data-scroll="register">Register</li>
+                    <li class="nav-item" data-scroll="course">Course</li>
                     <li class="nav-item" data-scroll="contact">Contact</li>
                 </ul>
-            </div>
-            <div class="ham">
-                <img src="./img/ham.png" alt="hamburger">
+                <div class="ham">
+                    <img src="./img/ham.png" alt="hamburger">
+                </div>
             </div>
         </nav>
         <button id="top"></button>
         <div class="root">
             <section id="logo" class="fs s-1">
                 <div class="matter section-common">
-                    <div></div>
+                    <!-- <div></div> -->
                     <div class="highlight">
                         <h1>Kickstart <br> Your <br> Programming <br> Career</h1>
                         <h2>Learn programming the way it's meant to be learned.</h2>
                     </div>
-                    <div></div>
+                    <!-- <div></div> -->
                 </div>
-               <div class="action">
+               <!-- <div class="action">
                     <button class="navigate yang" data-scroll="kip">Explore</button>
-                </div>
+                </div> -->
             </section>
-            <section id="kip" class="fs s-2">
+            <section id="about-us" class="fs s-2">
                 <div class="section-content section-common">
                     <div class="section-heading highlight-dark">
                         <h1>Who are we?</h1>
                     </div>
                     <div class="section-body">
-                        <article>
-                            <p>
-                                Kortiwala Institute of Programming is a hub for learning programming skills that'll help you build modern world softwares.
-                            </p>
-                            <p>
-                                We offer project-based teaching where you learn computer programming by building software projects from beginning to end.
-                            </p>
+                        <article class="article article-odd">
+                            <div class="pictograph span-1">
+                                <img class="picto" src="./img/institute.svg" alt="picto">
+                                <h2>Computer Literacy Provider</h2>
+                                <p class="graph">
+                                    An educational institute dedicated to provide computer literacy to the people of tomorrow.
+                                </p>
+                            </div>
+                            <div class="pictograph span-2">
+                                <img class="picto" src="./img/programming.svg" alt="picto">
+                                <h2>Programming-art School</h2>
+                                <p class="graph">
+                                    A center to learn not only programming languages, but also the art of programming.
+                                    <!-- Learn the art of programming, not just programming languages. -->
+                                </p>
+                            </div>
+                            <div class="pictograph span-3">
+                                <img class="picto" src="./img/network.svg" alt="picto">
+                                <h2>Software Building Mentors</h2>
+                                <p class="graph">
+                                    A hub for learning programming skills that'll help you build modern world softwares.
+                                </p>
+                            </div>
                         </article>
                     </div>
                 </div>
-                <div class="action">
-                    <!-- <button class="navigate nav-up yin" data-scroll="logo">Learn</button>  -->
-                    <button class="navigate nav-down yin" data-scroll="learn">Learn</button>
-                </div>
+                <!-- <div class="action">
+                    <!-- <button class="navigate nav-up yin" data-scroll="logo">Learn</button> 
+                    <button class="navigate nav-down yin" data-scroll="learn">Learn</button> -->
+
             </section>
+
             <section id="learn" class="fs s-3">
                 <!-- <p class="p">Benefits</p> -->
                 <div class="section-content section-common">
                     <div class="section-heading highlight-dark">
-                        <h1>What are we offering?</h1>
+                        <h1>What will you learn?</h1>
                     </div>
                     <div class="section-body">
-                        <article>
-                                We are not a formal institute where student will learn a specific skill set, rather, we are a playground where they learn by exploring, creating, and most importantly enjoying their expedition of knowledge.
-                        </article>
+                        <div class="section-brief">
+                            <!-- <div class="brief">
+                                <p>Technologies you will learn</p>
+                            </div> -->
+                            <div class="more-pictograph">
+                                <div class="pictograhph">
+                                    <img class="picto-mini" src="./img/python.svg" alt="python">
+                                    <p class="graph-mini">Python</p>
+                                </div>
+                                <div class="pictograhph">
+                                    <img class="picto-mini" src="./img/php-logo.svg" alt="php">
+                                    <p class="graph-mini">PHP</p>
+                                </div>
+                                <div class="pictograhph">
+                                    <img class="picto-mini" src="./img/nodejs.svg" alt="node.js">
+                                    <p class="graph-mini">Node.js</p>
+                                </div>
+                                <div class="pictograhph">
+                                    <img class="picto-mini" src="./img/github.svg" alt="github">
+                                    <p class="graph-mini">Git</p>
+                                </div>
+                                <div class="pictograhph">
+                                    <img class="picto-mini" src="./img/javascript.svg" alt="javascript">
+                                    <p class="graph-mini">JavaScript</p>
+                                </div>
+                                <div class="pictograhph">
+                                    <img class="picto-mini" src="./img/jquery.svg" alt="jquery">
+                                    <p class="graph-mini">jQuery</p>
+                                </div>      
+                                <div class="pictograhph">
+                                    <img class="picto-mini" src="./img/html-5.svg" alt="html5">
+                                    <p class="graph-mini">HTML5</p>
+                                </div>
+                                <div class="pictograhph">
+                                    <img class="picto-mini" src="./img/css3.svg" alt="css3">
+                                    <p class="graph-mini">CSS3</p>
+                                </div>
+                                
+                            </div>                    
+                        </div>
                     </div>
                 </div>
-                <div class="action">
+                <!-- <div class="action">
                     <button class="navigate yang" data-scroll="benefits">Benefits</button>
-                </div>
+                </div> -->
             </section>
             <section id="benefits" class="fs s-4">
                 <!-- <p class="p">Registration</p> -->
@@ -87,43 +146,137 @@
                         <h1>How does it benefit you?</h1>
                     </div>
                     <div class="section-body">
-                        <article>
-                                We are not a formal institute where student will learn a specific skill set, rather, we are a playground where they learn by exploring, creating, and most importantly enjoying their expedition of knowledge.
+                        <article class="article article-even">
+                               <div class="pictograph">
+                                    <img class="picto" src="./img/idea.svg" alt="logic">
+                                    <p class="graph">Gain logical and problem solving skills</p>
+                               </div>
+                               <div class="pictograph">
+                                    <img class="picto" src="./img/college.svg" alt="college-project">
+                                    <p class="graph">Build college-level projects</p>
+                               </div>
+                               <div class="pictograph">
+                                    <img class="picto" src="./img/career.svg" alt="career">
+                                    <p class="graph">Begin your programming career</p>
+                               </div>
+                               <div class="pictograph">
+                                    <img class="picto" src="./img/job.svg" alt="job">
+                                    <p class="graph">Get job ready</p>
+                               </div>
+                               <div class="pictograph">
+                                    <img class="picto" src="./img/automate.svg" alt="automate">
+                                    <p class="graph">Automate manual tasks for business and home</p>
+                               </div>
+                               <div class="pictograph">
+                                    <img class="picto" src="./img/hobby.svg" alt="hobby">
+                                    <p class="graph">Become a Hobbyist</p>
+                               </div>
+
                         </article>
                     </div>
                 </div>
-                <div class="action">
+                <!-- <div class="action">
                     <button class="navigate yin" data-scroll="register">Register</button>
-                </div>
+                </div> -->
             </section>
-            <section id="register" class="fs s-5">
+            <section id="course" class="fs s-4">
                 <div class="section-content section-common">
                     <div class="section-heading highlight-dark">
-                        <h1>How to register?</h1>
+                        <h1>Which courses do we offer?</h1>
                     </div>
                     <div class="section-body">
-                        <article>
-                                We are not a formal institute where student will learn a specific skill set, rather, we are a playground where they learn by exploring, creating, and most importantly enjoying their expedition of knowledge.
+                        <article class="article article-odd">
+                            <div class="pictograph span-1">
+                                <img class="picto" src="./img/management.svg" alt="picto">
+                                <p class="graph">
+                                    Software Project-based course design.
+                                    <div class="hyper-button">
+                                        <a href="#" class="btn btn-inline btn-purpleblue hb_a">
+                                            Course Details
+                                        </a>
+                                    </div>
+                                </p>
+                            </div>
+                            <div class="pictograph span-2">
+                                <img src="./img/form.svg" alt="register" class="picto">
+                                <p class="graph">
+                                    Interested? <br> Register at KIP, Now!
+                                    <div class="hyper-button">
+                                        <a href="#" class="btn btn-inline btn-purpleblue hb_a">
+                                            Register
+                                        </a>
+                                    </div>
+                                </p>
+                            </div>
+                            <div class="pictograph span-3">
+                                <img src="./img/contact.svg" alt="contact" class="picto">
+                                <p class="graph">
+                                    Want to know more? <br> Contact us.
+                                    <div class="hyper-button">
+                                        <a id="to-contact" href="#!" class="btn btn-inline btn-purpleblue hb_a" data-scroll="contact">
+                                            Contact
+                                        </a>
+                                    </div>
+                                </p>
+                            </div>
                         </article>
                     </div>
                 </div>
-                <div class="action">
-                    <button class="navigate yang" data-scroll="contact">Contact</button>
-                </div>
+                <!-- <div class="action">
+                    <button class="navigate yin" data-scroll="register">Register</button>
+                </div> -->
             </section>
-            <section id="contact" class="fs s-6">
+            <section id="contact" class="">
                 <div class="hs">
-                    <p>More Information</p>
-                </div>
-                <div class="hs">
-                    <p>Footer</p>
-                    <div class="action">
-                        <button class="navigate yin" data-scroll="logo">Back to top</button>
+                    <div class="handle-container">
+                        <div class="handle">
+                            <a href=""><img class="picto-micro" src="./img/facebook-white.svg" alt="facbook-logo"></a>
+                        </div>
+                        <div class="handle">
+                            <img class="picto-micro" src="./img/instagram-white.svg" alt="instagram-logo">
+                        </div>
+                        <div class="handle">
+                            <img class="picto-micro" src="./img/twitter-white.svg" alt="twitter-logo">
+                        </div>
+                        <div class="handle">
+                            <img class="picto-micro" src="./img/linkedin-white.svg" alt="linkedin-logo">
+                        </div>
+                        <div class="handle">
+                            <img class="picto-micro" src="./img/github-white.svg" alt="github-logo">
+                        </div>
+                        <div class="handle">
+                            <img class="picto-micro" src="./img/skype-white.svg" alt="skype-logo">
+                        </div>
+                    </div>
+                    <!-- <div class="footer-main">
+                        <div class="mark">
+                            <div class="mark-name mln">
+                                <div class="mark-name-big">
+                                    <p><b>Kortiwala</b></p>
+                                </div>
+                                <div class="mark-name-small">
+                                    <p>Insitute of Programming</p>
+                                </div>
+                            </div>
+                                
+                        </div>
+                        <div class="contact-details">
+                            <div class="contact-node">
+                                <a href="tel:+9197371-77329"><b>+919737177329</b></a>
+                            </div>
+                            <div class="contact-node">
+                                <a href="mailto:nawaazkortiwala@gmail.com"><b>nawaazkortiwala@gmail.com</b></a>
+                            </div>
+                        </div>
+                       
+                    </div> -->
+                    <div class="copyright">
+                        <p>&copy; 2019 Kortiwala Institute of Programming. All Rights Reserved | Designed by <b>KIP</b></p>
                     </div>
                 </div>
             </section>
         </div>
-    </div>
+    </main>
     <!-- <script src="./js/jquery-3.4.1.min.js"></script> -->
     <script src="./js/index.js"></script>
 </body>

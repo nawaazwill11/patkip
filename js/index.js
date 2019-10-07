@@ -27,11 +27,7 @@ window.addEventListener('load', function () {
             buttonEffects(nav, param)
         });
         // scroll effects
-        nav.addEventListener('click', function () {
-            let tag = nav.getAttribute('data-scroll');
-            scrollToElement(tag)
-        });
-
+        addScrollEvent(nav, click, 'data-scroll');
     }
 
     // Adds scroll capability to each of the navbar links.
@@ -72,6 +68,10 @@ window.addEventListener('load', function () {
         });
     });
 
+    // Scroll effect to contact button.
+    var contact = document.getElementById('to-contact');
+    addScrollEvent(contact, 'click', 'data-scroll');
+
 });
 
 /***End***/
@@ -97,17 +97,14 @@ function slideNavList() {
 
 // Toggles hamburger icon images.
 function toggleHam () {
-    ham.style.backgroundColor = 'ghostwhite';
-    setTimeout(function () {
-        ham.style.transition = '0.3s';
-        ham.style.backgroundColor = 'unset';
-    }, 300);
     let img = ham.children[0];
     if (img.getAttribute('src') == './img/ham.png') {
-        ham.children[0].setAttribute('src', './img/cross.png')
+        ham.children[0].setAttribute('src', './img/cross.png');
+        ham.style.backgroundColor = 'ghostwhite';
     }
     else {
-        ham.children[0].setAttribute('src', './img/ham.png')
+        ham.children[0].setAttribute('src', './img/ham.png');
+        ham.style.backgroundColor = 'unset';   
     }
 }
 
@@ -123,6 +120,13 @@ function buttonEffects(nav, param) {
     }
 }
 
+// Adds scroll effects. Call the function below.
+function addScrollEvent(element, event, tag_name) {
+    element.addEventListener(event, function () {
+        let tag = element.getAttribute(tag_name);
+        scrollToElement(tag);
+    });
+}
 
 // A beautiful function for smooth scrolling.
 // with adjustable x and y positions.

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .container {
+            display: grid;
+            grid-template-areas: "s1 s2"
+                                 "s3 s3";
+            text-align: center;
+            .article {
+            display: grid;
+            /* grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); */
+            /* column-gap: 50px; */
+            padding: 50px;
+            /* line-height: 1.6em;
+            word-spacing: 1px;
+            justify-content: space-evenly;
+            overflow-wrap: break-word; */
+            text-align: center;
+            /* font: initial; */
+            margin: 0 auto;
+}
+        }
+        #node1 {
+            grid-area: s1;
+        }
+        #node2 {
+            grid-area: s2;
+        }
+        #node3 {
+            grid-area: s3;
+        }
+        .nodes img{
+            width: 100px;
+        }
+        .nodes {
+            margin: 0 auto;
+        /* border-bottom: 1px solid lightgray; */
+        padding: 20px;
+        width: 80%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="node1" class="nodes">
+            <img src="./img/automate.svg" alt="">
+        </div>
+        <div id="node2" class="nodes">
+            <img src="./img/management.svg" alt="">
+        </div>
+        <div id="node3" class="nodes">
+            <img src="./img/contact.svg" alt="">
+        </div>
+    </div>
+</body>
+</html>

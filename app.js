@@ -32,6 +32,11 @@ router.get(/\/css\/.+/, function (request, response) {
 });
 
 router.get(/\/img\/.+/, function (request, response) {
-    response.writeHead(200, {'Content-Type': 'text/js'});
+    if (request.url.search(/.svg$/) >= 0) {
+        response.writeHead(200, {'Content-Type': 'image/svg+xml'});
+    }
+    else if (request.url.search(/.png$/) >= 0) {
+        response.writeHead(200, {'content-type': 'image/png'})
+    }
     fs.createReadStream(`.${request.url}`).pipe(response);
 });

@@ -51,11 +51,11 @@
         margin: 2em 0;;
     }
     .more-pictograph {
-       width: 70%;
+       width: 80%;
     }
     .more-pictograph {
-        grid-template-areas: 'a b c d'
-        'e f g h';
+        grid-template-areas: 'a b c d e'
+                             'f g h i j';
     }
     .handle-container {
         grid-template-areas: 'a b c d e f';

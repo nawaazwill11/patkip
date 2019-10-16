@@ -3,7 +3,7 @@
     border-radius: 25px;
     border: none;
     box-shadow: 0px 0px 5px 2px lightgray;
-    font-size: small;
+    font-size: 1em;
 }
 .btn:hover {
     cursor: pointer;

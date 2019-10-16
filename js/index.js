@@ -12,6 +12,11 @@
 window.addEventListener('load', function () {
 
     // Adds hover effect to buttons. 
+    var site_name = document.getElementsByClassName('site-name')[0];
+    site_name.addEventListener('click', function () {
+        window.location.href = "./index.html";
+    });
+
     var navigate = document.getElementsByClassName('navigate');
     for (let i = 0; i < navigate.length; i ++) {
         let nav = navigate[i];
@@ -35,11 +40,7 @@ window.addEventListener('load', function () {
     var nav_children = nav_list.children;
     for (let i = 0; i < nav_children.length; i++) {
         let child = nav_children[i];
-        child.addEventListener('click', function () {
-            slideNavList();
-            let tag = child.getAttribute('data-scroll');
-            scrollToElement(tag);
-        });
+        addScrollEvent(child, 'click', 'data-scroll', true);
     }
 
     // Makes hamburger to show and hide nav bar link list.
@@ -98,13 +99,11 @@ function slideNavList() {
 // Toggles hamburger icon images.
 function toggleHam () {
     let img = ham.children[0];
-    if (img.getAttribute('src') == './img/ham.png') {
-        ham.children[0].setAttribute('src', './img/cross.png');
-        ham.style.backgroundColor = 'ghostwhite';
+    if (img.getAttribute('src') == './img/ham-white.svg') {
+        ham.children[0].setAttribute('src', './img/cross-white.svg');
     }
     else {
-        ham.children[0].setAttribute('src', './img/ham.png');
-        ham.style.backgroundColor = 'unset';   
+        ham.children[0].setAttribute('src', './img/ham-white.svg');
     }
 }
 
@@ -121,10 +120,21 @@ function buttonEffects(nav, param) {
 }
 
 // Adds scroll effects. Call the function below.
-function addScrollEvent(element, event, tag_name) {
+function addScrollEvent(element, event, tag_name, slide=false) {
     element.addEventListener(event, function () {
-        let tag = element.getAttribute(tag_name);
+        var tag = element.getAttribute(tag_name);
         scrollToElement(tag);
+        if (slide){
+            slideNavList();
+        }
+
+        if (tag == 'contact') {
+            let handle_container = document.getElementsByClassName('handle-container')[0];
+            setTimeout(function () {
+                handle_container.classList.remove('shadow');
+            }, 800);
+            handle_container.classList.add('shadow');
+        }
     });
 }
 

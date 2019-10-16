@@ -10,7 +10,13 @@
         border: none;
     }
     .handle-container {
-        column-gap: 5em;
+        column-gap: 4em;
+    }
+    .highlight-text-large {
+        font-size: 2em;
+    }
+    .highlight-text {
+        font-size: 1.5em;
     }
     /* .picto-micro {
         width: 1.5em;
@@ -20,7 +26,7 @@
 
 @media screen and (min-width: 768px) {
     body {
-        font-size: 22px;
+        font-size: 20px;
     }
     .article {
         max-width: 720px;
@@ -58,21 +64,20 @@
                              'f g h i j';
     }
     .handle-container {
-        grid-template-areas: 'a b c d e f';
-        
-        column-gap: 2em;
+        grid-template-areas: 'a b c d e f g h';
+        column-gap: 1em;
     }
 
 }
 @media screen and (min-width: 992px) {
     body {
-        font-size: 25px;
+        font-size: 22px;
     }
     .article {
         max-width: 960px;
     }
     .handle-container {
-        column-gap: 3em;
+        column-gap: 2em;
     }
 }
 

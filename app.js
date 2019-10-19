@@ -12,8 +12,8 @@ server.on('listening', function () {
 server.on('request', function (request, response) {
     router(request, response, finalhandler(request, response));
 });
-//let port = process.env.PORT;
-let port = 8000;
+let port = process.env.PORT;
+// let port = 8000;
 server.listen(port);
 
 router.get('/', function(request, response) {
